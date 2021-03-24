@@ -3,7 +3,7 @@
   padding: 2rem 3rem 3rem;
   max-width: 500px;
   background: #00303f;
-  color: #fff;
+  color: #f5f4f4;
   box-shadow: -20px -20px 0px 0px rgba(100, 100, 100, 0.1);
   list-style: none;
 }
@@ -27,6 +27,6 @@
   margin-top: 0.2rem;
 }
 .remove-icon {
-  color: white;
+  color: #f5f4f4;
   cursor: pointer;
 }
