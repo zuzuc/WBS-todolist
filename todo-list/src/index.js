@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 //import './index.css';
 import App from './App';
 
+
+// hi party coders!! all code from all the *.js files arrives here is injected into index.html from here (root-roolez (-:))
 ReactDOM.render(
   <React.StrictMode>
     <App />

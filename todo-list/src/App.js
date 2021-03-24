@@ -1,42 +1,36 @@
-import React, {useState } from "react";
-import NewTaskInput from "./NewTaskInput";
+import React from "react";
 import TaskList from "./TaskList";
-
-
 
 import './App.css';
 
+
+
+
 function App() {
-  const [tasks, setTasks] = useState ([
-    {
-      text: "task",
-      status: "in progress"
-    },
-    {
-      text: "task 2",
-      status: "in progress"
-    }
-  ]);
-
-  const addNewTask = (newTaskText) => {
-    const newTasks = [
-      ...tasks,
-      {
-        text: newTaskText,
-        status: "in progress"
-      }
-    ];
-
-    setTasks(newTasks);
-  };
-
+   // from here the crazy code goes right into the 
   return (
+    
     <div className="App">
-      <h1>Hello everyone</h1>
-      <TaskList tasks={tasks} />
-      <NewTaskInput action={addNewTask} />
+      {/* <h1>TO - δουλειά - iş - وظيفة - کار - Maloche - DO - List</h1> */}
+      <TaskList />
     </div>
   );
 }
 
+
+/*
++++learning to code. feel free to delete it!!!
+function nameSomeone(vorname, nachname) {
+  return [vorname, nachname]
+
+};
+
+//console.log(nameSomeone('olli', 'master'));
+
+const [vorname, nachname] = nameSomeone ('hans', 'messser')
+
+console.log(vorname)
+console.log(nachname)
+*/
+/* <h1>TO - δουλειά - iş - وظيفة - کار - Maloche - DO - List</h1>*/
 export default App;
