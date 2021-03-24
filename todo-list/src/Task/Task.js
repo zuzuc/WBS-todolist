@@ -1,6 +1,7 @@
 import React from "react";
 import {FaTrashAlt} from 'react-icons/fa'
 
+import './Task.css';
 
 function Task({ tasks, compTask, removeTask }) {
   // const [edit, setEdit] = useState ({
@@ -13,6 +14,7 @@ function Task({ tasks, compTask, removeTask }) {
 
    
   return tasks.map ((task, index) => (
+    <div className="Task">
       <div
          className={task.isComplete ? 'Task completed' : 'Task'}       //
          key={index}
@@ -20,13 +22,15 @@ function Task({ tasks, compTask, removeTask }) {
            <div key={task.id} onClick={() => compTask(task.id)} >
              {task.text}
            </div>
+          
            <div className='icons'>
              <FaTrashAlt                                                          //icon connected to button
              onClick={() => removeTask(task.id)}
              className='remove-icon'
              />
            </div>
-          </div>
+      </div>
+      </div>
 
   ));
 

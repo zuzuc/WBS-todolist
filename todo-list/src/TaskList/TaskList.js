@@ -41,16 +41,19 @@ function TaskList() {
 
     return (
         //<> this is called fragment. It´s like an empty div
-        <>
-            <h2>Todo List</h2>
+        
+        <div className="TaskList">
+            <h2>
+                Todo List </h2>
             <NewTaskInput onSubmit={addTask} />
             <Task 
             tasks={tasks}
             compTask={compTask}
             removeTask={removeTask} />
-        </>
+        </div>
     ); 
 }
+
 
 export default TaskList;
 

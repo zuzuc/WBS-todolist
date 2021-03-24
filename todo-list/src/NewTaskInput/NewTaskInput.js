@@ -26,6 +26,7 @@ function NewTaskInput(props) {
   }
 
   return (
+    <div className="NewTaskInput">
     <form className= 'task-form' onSubmit={setSubmit} >
     <>
       <input
@@ -42,6 +43,7 @@ function NewTaskInput(props) {
       </button>
     </>
     </form> 
+    </div>
   );
 }
 
