@@ -1,37 +1,47 @@
-import React, { useRef } from "react";
+import React, {useState, useEffect, useRef} from "react";
 
 import "./NewTaskInput.css";
 
-function NewTaskInput({ action }) {
-  const inputEl = useRef(null);
+function NewTaskInput(props) {
+  const [input, setInput] = useState ('');
 
-  const onTyping = (e) => {
-    console.log(e);
-    const { keyCode, target } = e;
-    if (keyCode === 13) {
-      action(target.value);
-      target.value = "";
-    }
-  };
+  const inputRef = useRef(null)
 
-  const onClick = () => {
-    action(inputEl.current.value);
-    inputEl.current.value = "";
-  };
+  useEffect(() => {
+    inputRef.current.focus()
+  });
+  const setChange = e => {
+    setInput(e.target.value)
+  }
+  const setSubmit = e => {
+    e.preventDefault();
+
+
+    props.onSubmit({
+      id: Math.floor(Math.random() * 10000),
+      text: input
+    })
+
+    setInput('');
+  }
 
   return (
+    <form className= 'task-form' onSubmit={setSubmit} >
     <>
       <input
-        onKeyDown={onTyping}
-        placeholder="add todo"
+        placeholder="What do you want to do?"
         className="NewTaskInput"
+        value={input}
         type="text"
-        ref={inputEl}
+        name={'text'}
+        onChange={setChange}
+        ref={inputRef}
       />
-      <button onClick={onClick} className="push">
-        add
+      <button className="push">
+        Add a Todo
       </button>
     </>
+    </form> 
   );
 }
 
