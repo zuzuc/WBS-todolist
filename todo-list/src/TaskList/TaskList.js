@@ -19,8 +19,8 @@ function TaskList() {
     // part 1 done
 
 //  edit section
-    const updateTodo = (todoId, newValue) => {
-     setTodos(prev => prev.map(item => (item.id === todoId ? newValue :item )));
+    const updateTask = (taskId, newValue) => {
+     setTasks(prev => prev.map(item => (item.id === taskId ? newValue :item )));
     };
 
 
