@@ -21,10 +21,10 @@ function Task({ tasks, compTask, removeTask, updateTask }) {
     const submitUpdate = value => {
       updateTask(edit.id, value);
       setEdit({
-        id: null,
-        value: ''
-      })
-    }
+          id: null,
+          value: ''
+      });
+  };
     
     if (edit.id) {
       return <NewTaskInput edit={edit} onSubmit={submitUpdate} />;
