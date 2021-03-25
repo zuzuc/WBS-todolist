@@ -3,7 +3,7 @@ import React, {useState, useEffect, useRef} from "react";
 import "./NewTaskInput.css";
 
 function NewTaskInput(props) {
-  const [input, setInput] = useState ('');
+  const [input, setInput] = useState (props.edit ? props.edit.value : '');
 
   const inputRef = useRef(null)
 
@@ -27,6 +27,24 @@ function NewTaskInput(props) {
 
   return (
       <form className= "NewTaskInput" onSubmit={setSubmit} >
+        {props.edit ? (
+        <>
+        <input
+          placeholder="Edit your changes"
+          classname="inputfield"
+          value={input}
+          type="text"
+          name={'text'}
+          onChange={setChange}
+          ref={inputRef}
+        />
+        <button className="push">
+          Update
+        </button>
+        </>
+        ) :
+        (
+          <>
         <input
           placeholder="What do you want to do?"
           classname="inputfield"
@@ -39,6 +57,8 @@ function NewTaskInput(props) {
         <button className="push">
           Add a Todo
         </button>
+        </>
+        )}
       </form>
   );
 }
