@@ -55,7 +55,8 @@ function TaskList() {
             <Task 
             tasks={tasks}
             compTask={compTask}
-            removeTask={removeTask} />
+            removeTask={removeTask}
+            updateTask={updateTask} />
         </div>
     ); 
 }
