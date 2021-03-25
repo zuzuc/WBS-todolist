@@ -18,6 +18,12 @@ function TaskList() {
     };
     // part 1 done
 
+//  edit section
+    const updateTodo = (todoId, newValue) => {
+     setTodos(prev => prev.map(item => (item.id === todoId ? newValue :item )));
+    };
+
+
     // remove task part 
 
     const removeTask = id => {
