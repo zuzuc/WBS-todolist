@@ -1,9 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import {FaTrashAlt} from 'react-icons/fa'
-
+import {AiFillEdit} from 'react-icons/ai'
+import NewTaskInput from "../NewTaskInput";
 import './Task.css';
 
-function Task({ tasks, compTask, removeTask }) {
+function Task({ tasks, compTask, removeTask, updateTask }) {
   // const [edit, setEdit] = useState ({
   //   id: null,
   //   value: ''
@@ -12,6 +13,24 @@ function Task({ tasks, compTask, removeTask }) {
 
 //Setting
 
+    const [edit, setEdit] = useState ({
+      id: null,
+      value: ''
+    })
+
+    const submitUpdate = value => {
+      updateTask(edit.id, value);
+      setEdit({
+        id: null,
+        value: ''
+      })
+    }
+    
+    if (edit.id) {
+      return <NewTaskInput edit={edit} onSubmit={submitUpdate} />;
+    }
+
+
    
   return tasks.map ((task, index) => (
     // <div className="Task">
@@ -19,7 +38,7 @@ function Task({ tasks, compTask, removeTask }) {
          className={task.isComplete ? 'Task completed' : 'Task'}       //
          key={index}
          >
-           <div key={task.id} onClick={() => compTask(task.id)} >
+          <div className="text-box" key={task.id} onClick={() => compTask(task.id)} >
              {task.text}
            </div>
           
@@ -28,6 +47,9 @@ function Task({ tasks, compTask, removeTask }) {
              onClick={() => removeTask(task.id)}
              className='remove-icon'
              />
+             <AiFillEdit 
+             onClick={() => setEdit({ id: task.id, value: task.text})}
+             className='edit-icon'></AiFillEdit>
            </div>
         </div>
       // </div>
