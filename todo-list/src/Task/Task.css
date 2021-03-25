@@ -1,17 +1,15 @@
 .Task {
-  display: flex;
-  margin: 0 -3rem 4px;
-  padding: 1.1rem 3rem;
-  justify-content: space-between;
-  align-items: start-flex;
-  background: #cae4db;
-}
-
-.Task {
   position: relative;
   transition: opacity 0.4s linear;
   max-width: 500px;
   color: #00303f;
+  display: flex;
+  margin: 0 -3rem 4px;
+  padding: 1.1rem 3rem;
+  justify-content: space-between;
+  align-items: center;
+  background: #cae4db;
+  cursor: pointer;
 }
 
 .Task.completed {
@@ -104,6 +102,7 @@
 }
 
 .remove-icon {
-  margin-left: 18rem;
   color: #00303f;
+  display: flex;
+  align-items: center;
 }

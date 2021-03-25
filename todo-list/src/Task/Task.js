@@ -14,7 +14,7 @@ function Task({ tasks, compTask, removeTask }) {
 
    
   return tasks.map ((task, index) => (
-    <div className="Task">
+    // <div className="Task">
       <div
          className={task.isComplete ? 'Task completed' : 'Task'}       //
          key={index}
@@ -29,8 +29,8 @@ function Task({ tasks, compTask, removeTask }) {
              className='remove-icon'
              />
            </div>
-      </div>
-      </div>
+        </div>
+      // </div>
 
   ));
 
