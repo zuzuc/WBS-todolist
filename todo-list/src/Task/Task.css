@@ -101,3 +101,7 @@
   background: #eee;
   box-sizing: border-box;
 }
+
+.remove-icon {
+  margin-left: 18rem;
+}

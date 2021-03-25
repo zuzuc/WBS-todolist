@@ -26,24 +26,20 @@ function NewTaskInput(props) {
   }
 
   return (
-    <div className="NewTaskInput">
-    <form className= 'task-form' onSubmit={setSubmit} >
-    <>
-      <input
-        placeholder="What do you want to do?"
-        className="NewTaskInput"
-        value={input}
-        type="text"
-        name={'text'}
-        onChange={setChange}
-        ref={inputRef}
-      />
-      <button className="push">
-        Add a Todo
-      </button>
-    </>
-    </form> 
-    </div>
+      <form className= "NewTaskInput" onSubmit={setSubmit} >
+        <input
+          placeholder="What do you want to do?"
+          classname="inputfield"
+          value={input}
+          type="text"
+          name={'text'}
+          onChange={setChange}
+          ref={inputRef}
+        />
+        <button className="push">
+          Add a Todo
+        </button>
+      </form>
   );
 }
 
